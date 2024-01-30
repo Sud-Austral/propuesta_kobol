@@ -33,6 +33,7 @@
             </ul>
         </div>
     </div>
+    <!--
     <script>
         function getData(urlData) {
             let rawData;
@@ -45,9 +46,9 @@
             return JSON.parse(rawData);
         }
         const url = "https://raw.githubusercontent.com/Sud-Austral/DATA_MAPA_PUBLIC_V2/main/AGUAS/CUERPOS/cuerpos_agua_01101.geojson"
-        //const data = getData("https://raw.githubusercontent.com/Sud-Austral/propuesta_kobol/main/mi_diccionario.geojson")
-        const data = getData(url);
-        console.log(data)
+        const data = getData("https://raw.githubusercontent.com/Sud-Austral/propuesta_kobol/main/mi_diccionario2.geojson")
+        //const data = getData(url);
+        //console.log(data,data2)
         var bounds = L.geoJSON(data).getBounds();
         // Crea una instancia de mapa en el contenedor con id 'map'
         var mymap = L.map('mapid')  //.setView([51.505, -0.09], 13);
@@ -64,17 +65,17 @@
         // Añade un popup al marcador
         //marker.bindPopup("<b¡Hola!</b><br>¡Este es un marcador de ejemplo!").openPopup();
       </script>
-
+      -->
     <!-- div que contiene el mapa 
     <div id="map1"></div>-->
 
     <!-- Link viene de la documentación -->
 
-    <!--
+    
     <script src="library_map.js"></script>
     <script src="data_inicial.js"></script>
     <script src="Chile.js"></script>
--->
+
 
 
 </body>
