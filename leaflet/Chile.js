@@ -1,6 +1,6 @@
 //console.log(producto);
 //const cuerposagua = getData("https://raw.githubusercontent.com/Sud-Austral/DATA_MAPA_PUBLIC_V2/main/AGUAS/CUERPOS/cuerpos_agua_09201.geojson");
-const cuerposagua = getData("https://raw.githubusercontent.com/Sud-Austral/propuesta_kobol/main/mi_diccionario2.geojson");
+const cuerposagua = getData("https://raw.githubusercontent.com/Sud-Austral/propuesta_kobol/main/mi_diccionario3.geojson");
 
 
 //PopUp automatico
@@ -37,7 +37,6 @@ function getColor(d){
 
 //funcion para mostrar la simbologia (rango de color)
 function style(feature){
-    console.log(feature.properties.SUPERFICIE);
     return{
         fillColor: getColor(feature.properties.SUPERFICIE),
         weight: 2,
@@ -100,20 +99,21 @@ function onEachFeature(feature, layer){
 
 // Agregar capa en formato GeoJason
 //L.geoJson(cuerposagua).addTo(map);
+/*
 var chileJS = L.geoJson(chile,{
     style: style,
     onEachFeature: onEachFeature
     
 }).addTo(map);
-
+*/
 var cuerposaguaJS2 = L.geoJson(cuerposagua,{
     onEachFeature: onEachFeature
 }).addTo(map);
 
 // Aquí se agregan las capas al menu
 var overlayMapsRegiones = {            
-   "Cuerpos de agua": cuerposaguaJS2,
-   "Comunas 09": chileJS
+   "Polígonos": cuerposaguaJS2,
+   //"Polígonos": chileJS
 };
 
         
@@ -127,7 +127,7 @@ var capaRegiones2 = L.control.layers(capas_base, overlayMapsRegiones, {
 
 
  // Para centrar en el objeto que uno quiera. Las 4
- map.fitBounds(chileJS.getBounds());
+ map.fitBounds(cuerposaguaJS2.getBounds());
  let zoom = map.getZoom();
  let zoomMin = 10
  map.setZoom(zoom > zoomMin ? zoomMin : zoom);
