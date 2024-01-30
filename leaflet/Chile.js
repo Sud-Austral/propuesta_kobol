@@ -110,6 +110,8 @@ var cuerposaguaJS2 = L.geoJson(cuerposagua,{
     onEachFeature: onEachFeature
 }).addTo(map);
 
+console.log(cuerposagua)
+
 // Aquí se agregan las capas al menu
 var overlayMapsRegiones = {            
    "Polígonos": cuerposaguaJS2,
@@ -128,6 +130,6 @@ var capaRegiones2 = L.control.layers(capas_base, overlayMapsRegiones, {
 
  // Para centrar en el objeto que uno quiera. Las 4
  map.fitBounds(cuerposaguaJS2.getBounds());
- let zoom = map.getZoom();
- let zoomMin = 10
- map.setZoom(zoom > zoomMin ? zoomMin : zoom);
+ //let zoom = map.getZoom();
+ //let zoomMin = 10
+ //map.setZoom(zoom > zoomMin ? zoomMin : zoom);
