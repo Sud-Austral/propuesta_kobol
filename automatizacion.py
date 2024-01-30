@@ -21,8 +21,8 @@ if __name__ == '__main__':
             baseProperties = fe.copy()
             baseGeometry["type"] = "MultiPolygon"
             baseGeometry["coordinates"] = [[[[float(x.split(" ")[1]),float(x.split(" ")[0])] for x in fe["Extensi_n_territoria_nar_metros_cuadrados"].split(";")]]]
-            baseFeature["properties"] = baseProperties
-            baseFeature["geometry"] = baseGeometry
-            base["features"].append(baseFeature)
+            baseFeature["properties"] = baseProperties.copy()
+            baseFeature["geometry"] = baseGeometry.copy()
+            base["features"].append(baseFeature.copy())
         with open('mi_diccionario3.geojson', 'w') as archivo:
             json.dump(base, archivo)
