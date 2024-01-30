@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mapa 1</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Jquery, necesario para la lectura de los datos.-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+
+
+    <!-- Link viene de la documentación -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <!-- Link del CSS -->
+    <link rel="stylesheet" type="text/css" href="Chile.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="mapid">
+        <div id="menu">
+            <ul>
+                <li class="op1">MAPA CLARO</li>
+                <li class="op2">MAPA OSCURO</li>
+                <li class="op3">MAPA SATELITAL</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function getData(urlData) {
+            let rawData;
+            $.get({
+                url: urlData,
+                success: function (data, status) {
+                    rawData = data;
+                }, async: false
+            });
+            return JSON.parse(rawData);
+        }
+        const url = "https://raw.githubusercontent.com/Sud-Austral/DATA_MAPA_PUBLIC_V2/main/AGUAS/CUERPOS/cuerpos_agua_01101.geojson"
+        //const data = getData("https://raw.githubusercontent.com/Sud-Austral/propuesta_kobol/main/mi_diccionario.geojson")
+        const data = getData(url);
+        console.log(data)
+        var bounds = L.geoJSON(data).getBounds();
+        // Crea una instancia de mapa en el contenedor con id 'map'
+        var mymap = L.map('mapid')  //.setView([51.505, -0.09], 13);
+        mymap.fitBounds(bounds);
+        L.geoJSON(data).addTo(mymap);
+        // Añade un mapa base de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap contributors'
+        }).addTo(mymap);
+    
+        // Añade un marcador en una ubicación específica
+        //var marker = L.marker([51.5, -0.09]).addTo(mymap);
+    
+        // Añade un popup al marcador
+        //marker.bindPopup("<b¡Hola!</b><br>¡Este es un marcador de ejemplo!").openPopup();
+      </script>
+
+    <!-- div que contiene el mapa 
+    <div id="map1"></div>-->
+
+    <!-- Link viene de la documentación -->
+
+    <!--
+    <script src="library_map.js"></script>
+    <script src="data_inicial.js"></script>
+    <script src="Chile.js"></script>
+-->
+
+
+</body>
+</html>

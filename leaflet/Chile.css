@@ -1,0 +1,168 @@
+
+/*
+#map1{
+    margin: 0 auto;
+    width: 80%;
+    min-height: 600px;
+    max-width: 100%;
+}
+
+h4{
+ color:blueviolet;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ text-align: center;   
+}
+
+select{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.banner2{
+    /*width: 70%;*/
+    /*
+    width: 12vw;
+    height: auto;
+}
+.prueba{
+    text-align: center;
+}
+
+
+#menu {
+    font-family: Arial;
+    font-size: 12.5px;
+    text-align: center;
+    z-index: 998;
+    position: fixed;
+    width: 100%;
+    left: 0px; /*A la derecha deje un espacio de 0px*/
+    /*
+    right: 0px; /*A la izquierda deje un espacio de 0px*/
+    /*
+    bottom: 0px; /*Abajo deje un espacio de 0px*/
+    /*
+}
+
+    #menu ul li {
+        display: inline-block;
+        text-decoration: none;
+        color: #FFF;
+        padding: 0.6%;
+        cursor: pointer;
+        background-color:darkgrey;
+        opacity: 0.6;
+        width: 11%;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        #menu ul li:hover {
+            background-color:darkslategray;
+            cursor: pointer;
+        }
+
+*/
+
+.leaflet-control-layers-overlays {
+    line-height: 0 !important;   
+}
+
+.custom .leaflet-popup-tip {
+    display: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html, body, #mapid {
+    height: 100%;
+}
+
+.logo {
+    width: 20%;
+    height: auto;
+}
+
+.banner2 {
+    width: 70%;
+    height: auto;
+}
+
+.legend {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #A9A9A9;
+    box-shadow: 13px 10px 30px -3px rgba(0,0,0,0.47);
+    -webkit-box-shadow: 13px 10px 30px -3px rgba(0,0,0,0.47);
+    -moz-box-shadow: 13px 10px 30px -3px rgba(0,0,0,0.47);
+}
+
+.titleLegend {
+    text-align: center;
+}
+
+.desc1 {
+    background: #fd0000;
+    margin-right: 5%;
+    border: 1px solid #909090;
+}
+
+.desc2 {
+    background: #fcdf0a;
+    margin-right: 5%;
+    border: 1px solid #909090;
+}
+
+.desc3 {
+    background: #0d99ee;
+    margin-right: 5%;
+    border: 1px solid #909090;
+}
+
+.desc4 {
+    background: #3ade29;
+    margin-right: 5%;
+    border: 1px solid #909090;
+}
+
+.desc5 {
+    background: #a0a2a0;
+    margin-right: 5%;
+    border: 1px solid #909090;
+}
+
+/**/
+
+#menu {
+    font-family: Arial;
+    font-size: 12.5px;
+    text-align: center;
+    z-index: 998;
+    position: fixed;
+    width: 100%;
+    left: 0px; /*A la derecha deje un espacio de 0px*/
+    right: 0px; /*A la izquierda deje un espacio de 0px*/
+    bottom: 0px; /*Abajo deje un espacio de 0px*/
+}
+
+#menu ul li {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFF;
+    padding: 0.6%;
+    cursor: pointer;
+    background-color: #005580;
+    opacity: 1;
+    width: 11%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#menu ul li:hover {
+    background-color: #004365;
+    cursor: pointer;
+}
