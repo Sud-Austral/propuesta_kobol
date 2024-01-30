@@ -27,12 +27,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         echo "Vamos a lo importante..."
-        # python automatizacion.py
-        # python publicadas.py
-        # python desiertas.py
-        # python adjudicadas.py
-        # python suspendida.py
-        # python revocadas.py
+        python automatizacion.py
+        
 
     - uses: stefanzweifel/git-auto-commit-action@v2
       with:
