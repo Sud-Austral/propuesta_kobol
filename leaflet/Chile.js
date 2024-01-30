@@ -1,7 +1,7 @@
 //console.log(producto);
 //const cuerposagua = getData("https://raw.githubusercontent.com/Sud-Austral/DATA_MAPA_PUBLIC_V2/main/AGUAS/CUERPOS/cuerpos_agua_09201.geojson");
 const url = "https://raw.githubusercontent.com/Sud-Austral/DATA_MAPA_PUBLIC_V2/main/AGUAS/CUERPOS/cuerpos_agua_01403.geojson";
-const cuerposagua = getData("https://raw.githubusercontent.com/Sud-Austral/propuesta_kobol/main/mi_diccionario4.geojson");
+const cuerposagua = getData("https://raw.githubusercontent.com/Sud-Austral/propuesta_kobol/main/mi_diccionario3.geojson");
 //const cuerposagua2 = getData(url);
 //console.log(cuerposagua2)
 //PopUp automatico
