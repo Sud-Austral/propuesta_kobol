@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0yDW3zjVl8jDkPtdNMoP0oWBmE1czlVr2U4k/i7WFEo3IMSwD4oEzLrBcC6FG3j" crossorigin="anonymous">
+  <style>
+    /* Custom styles */
+    body {
+      background-color: #dc3545; /* Fondo rojo */
+      color: white; /* Texto blanco */
+      margin: 0; /* Eliminar margen */
+    }
+    .navbar {
+      background-color: #f8f9fa; /* Fondo gris claro para el navbar */
+      padding: 0; /* Eliminar padding */
+    }
+    .navbar-brand img {
+      height: 50px; /* Ajustar la altura de la imagen según sea necesario */
+    }
+    .navbar-text {
+      margin-left: auto; /* Mover el texto a la derecha */
+    }
+    .content {
+      padding: 20px; /* Espaciado interno */
+      text-align: center; /* Alineación central */
+    }
+    footer {
+      background-color: #343a40; /* Fondo gris oscuro para el footer */
+      color: white; /* Texto blanco */
+      padding: 20px 0; /* Espaciado interno */
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0; /* Asegurar que el footer esté en la parte inferior izquierda */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://via.placeholder.com/150" alt="Institucional Logo">
+      </a>
+      <span class="navbar-text text-end m-5 p-5" style="color:#dc3545;float: right;font-size: 3em;">
+        Nombre de la Empresa
+      </span>
+    </div>
+  </nav>
+
+  <!-- Contenido -->
+  <div class="content">
+    <h1>Contenido de la página</h1>
+    <p>Aquí puedes agregar cualquier contenido que desees.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Este es el footer de la página.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS y Popper.js (requerido para los componentes de Bootstrap) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-v4VrMKuSwFff++eBTh5xyOrp/IhWv/AjoiArPLc5lh/wujwoFfBrvmwCCJ7UpOqo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-0MZ4NuJx+VPmlskqIkSxp+sZbcuG9B4v9J+PYYz3fYVvg7X8QpMhH7w8UQpI2NzP" crossorigin="anonymous"></script>
+</body>
+</html>
+
