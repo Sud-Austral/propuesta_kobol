@@ -121,7 +121,7 @@ var overlayMapsRegiones = {
 };
 
         
-        
+console.log(base3)        
 var capas_base = {"Mapa claro":base, "Mapa Oscuro":base2, "Mapa Satelital":base3}
 
 var capaRegiones2 = L.control.layers(capas_base, overlayMapsRegiones, {

@@ -57,26 +57,49 @@
         </div>
       </nav>
 
-      <div id="formulariokoboltoolbox" >
-      <iframe src="https://ee.kobotoolbox.org/x/4HOuRnsg" style="width: 98vw;height: 89vh;"></iframe>
+      <div id="mapid" >
+        <div id="menu">
+            <ul>
+                <li class="op1">MAPA CLARO</li>
+                <li class="op2">MAPA OSCURO</li>
+                <li class="op3">MAPA SATELITAL</li>
+            </ul>
+        </div>
     </div>
 
 
     <script>
-      function guardarEnCookie(nombre, valor, dias) {
-          var fecha = new Date();
-          fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000));
-          var expira = "expires=" + fecha.toUTCString();
-          document.cookie = nombre + "=" + valor + ";" + expira + ";path=/";
-      }
+      // Función para leer una variable de una cookie
+        function leerDeCookie(nombre) {
+            var nombreEQ = nombre + "=";
+            var cookies = document.cookie.split(';');
+            for(var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                while (cookie.charAt(0) == ' ') {
+                    cookie = cookie.substring(1);
+                }
+                if (cookie.indexOf(nombreEQ) == 0) {
+                    return cookie.substring(nombreEQ.length, cookie.length);
+                }
+            }
+            return null;
+        }
 
-      guardarEnCookie("mi_variable", "Hola Mundo", 7);
+        var valorCookie = leerDeCookie("mi_variable1");
+        if(valorCookie == null){
+          console.log("aki po maricon")
+        }
+        console.log("Valor de la cookie: " + valorCookie);
     </script>
 
     
 
    
 
+    
+    <script src="library_map.js"></script>
+    <script src="data_inicial.js"></script>
+    <script src="Propuesta1.js"></script>
 
 
 
