@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    // Función para leer una variable de una cookie
+      function leerDeCookie(nombre) {
+          var nombreEQ = nombre + "=";
+          var cookies = document.cookie.split(';');
+          for(var i = 0; i < cookies.length; i++) {
+              var cookie = cookies[i];
+              while (cookie.charAt(0) == ' ') {
+                  cookie = cookie.substring(1);
+              }
+              if (cookie.indexOf(nombreEQ) == 0) {
+                  return cookie.substring(nombreEQ.length, cookie.length);
+              }
+          }
+          return null;
+      }
+
+      var valorCookie = leerDeCookie("token");
+      if(valorCookie != "a.193367115686426"){
+        window.location.href = "Propuesta1_login.html"; 
+      }
+  </script>
     <title>Mapa 1</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

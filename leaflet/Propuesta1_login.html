@@ -1,33 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    // Función para leer una variable de una cookie
-      function leerDeCookie(nombre) {
-          var nombreEQ = nombre + "=";
-          var cookies = document.cookie.split(';');
-          for(var i = 0; i < cookies.length; i++) {
-              var cookie = cookies[i];
-              while (cookie.charAt(0) == ' ') {
-                  cookie = cookie.substring(1);
-              }
-              if (cookie.indexOf(nombreEQ) == 0) {
-                  return cookie.substring(nombreEQ.length, cookie.length);
-              }
-          }
-          return null;
-      }
-
-      var valorCookie = leerDeCookie("token");
-      if(valorCookie != "a.193367115686426"){
-        window.location.href = "Propuesta1_login.html"; 
-      }
-  </script>
-
-
-
-
-
     <title>Mapa 1</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,6 +31,13 @@
     .navbar-brand {
         transform: translate(-20px);
     }
+
+    /* Estilo para los enlaces desactivados */
+    .navbar-nav .nav-link.disabled {
+      color: #6c757d; /* Color gris oscuro */
+      pointer-events: none; /* Deshabilita el clic */
+      cursor: default; /* Cursor normal */
+    }
     </style>
 </head>
 <body>
@@ -70,13 +50,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="Propuesta1.html" >Formulario</a>
+                <a class="nav-link disabled" href="Propuesta1.html" >Formulario</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="Propuesta_powerbi.html" >PowerBI</a>
+                <a class="nav-link disabled" href="Propuesta_powerbi.html" >PowerBI</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="Propuesta_mapa.html" >Mapa</a>
+                <a class="nav-link disabled" href="Propuesta_mapa.html" >Mapa</a>
               </li>
               
             </ul>
@@ -84,9 +64,28 @@
         </div>
       </nav>
 
-      <div id="formulariokoboltoolbox" >
-      <iframe src="https://ee.kobotoolbox.org/x/4HOuRnsg" style="width: 98vw;height: 89vh;"></iframe>
-    </div>
+      <div class="container login-container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">Ingreso</div>
+              <div class="card-body">
+                <form id="loginForm">
+                  <div class="form-group" >
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" id="email" placeholder="Ingrese usuario">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Ingrese contraseña">
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
     <script>
@@ -97,7 +96,31 @@
           document.cookie = nombre + "=" + valor + ";" + expira + ";path=/";
       }
 
-      guardarEnCookie("mi_variable", "Hola Mundo", 7);
+      $(document).ready(function(){
+        $('#loginForm').submit(function(event){
+          // Evitar que el formulario se envíe automáticamente
+          event.preventDefault();
+          
+          // Obtener el valor del campo de correo electrónico
+          var email = $('#email').val();
+          
+          // Obtener el valor del campo de contraseña
+          var password = $('#password').val();
+          
+          // Aquí puedes realizar cualquier acción que necesites con el email y la contraseña,
+          // como enviarlos a un servidor para autenticar al usuario.
+          
+          // Por ahora, simplemente mostraremos los valores en la consola.
+          if(email == "admin" && password == "123"){
+            //console.log('Email:', email);
+            //console.log('Password:', password);
+            guardarEnCookie("token", "a.193367115686426", 7);
+            window.location.href = "Propuesta1.html"; 
+
+          }
+          
+        });
+      });
     </script>
 
     
