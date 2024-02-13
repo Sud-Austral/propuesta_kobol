@@ -31,5 +31,6 @@ if __name__ == '__main__':
             baseFeature["properties"] = baseProperties.copy()
             baseFeature["geometry"] = baseGeometry.copy()
             base["features"].append(baseFeature.copy())
+            
         with open('mi_diccionario3.geojson', 'w') as archivo:
             json.dump(base, archivo)
