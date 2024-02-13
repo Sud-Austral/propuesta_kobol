@@ -24,9 +24,8 @@ if __name__ == '__main__':
         for fe in respuesta["results"]:
             baseProperties = fe.copy()
             baseGeometry["type"] = "MultiPolygon"
-            try:
-                
-                baseGeometry["coordinates"] = [[[[float(x.split(" ")[1]),float(x.split(" ")[0])] for x in fe["Extensi_n_territoria_nar_metros_cuadrados"].split(";")]]]
+            try:                
+                baseGeometry["coordinates"] = [[[[float(x.split(" ")[1]),float(x.split(" ")[0])] for x in fe["shape_extension"].split(";")]]]
             except:
                 pass
             baseFeature["properties"] = baseProperties.copy()
