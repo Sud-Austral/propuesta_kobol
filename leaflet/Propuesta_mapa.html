@@ -54,6 +54,13 @@
         transform: translate(-20px);
     }
     </style>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
 </head>
 <body>
 
@@ -73,7 +80,6 @@
               <li class="nav-item active">
                 <a class="nav-link" href="Propuesta_mapa.html" >Mapa</a>
               </li>
-              
             </ul>
           </div>
         </div>
@@ -85,13 +91,14 @@
                 <li class="op1">MAPA CLARO</li>
                 <li class="op2">MAPA OSCURO</li>
                 <li class="op3">MAPA SATELITAL</li>
+                <li class="op4" onclick="eventoClick()">DESCARGA</li>
             </ul>
         </div>
     </div>
 
 
 
-    
+   
 
    
 
@@ -99,6 +106,39 @@
     <script src="library_map.js"></script>
     <script src="data_inicial.js"></script>
     <script src="Propuesta1.js"></script>
+
+    <script>
+      // Datos de ejemplo (diccionario)
+      
+      //Esto es solamente un ejemplo de la estructura que debe tener el json para convertirlo en Excel
+      const jsonData = [
+      { Name: "John", Age: 30, City: "New York" },
+      { Name: "Alice", Age: 25, City: "Los Angeles" },
+      { Name: "Bob", Age: 35, City: "Chicago" }
+        ];
+
+      const dataAExcel = cuerposagua["features"].map(x => x.properties);
+      // Función para convertir el diccionario en formato adecuado para XLSX
+      function convertToXLSX() {        
+        var ws = XLSX.utils.json_to_sheet(dataAExcel);
+        var wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Datos");
+        return wb;
+      }
+
+      // Función para descargar el archivo Excel
+      function downloadExcelFile(wb, filename) {
+          XLSX.writeFile(wb, filename);
+      }
+
+      function eventoClick(){
+        var wb = convertToXLSX();
+        console.log(wb)
+        downloadExcelFile(wb, "datos.xlsx");
+      }
+
+      
+  </script>
 
 
 
