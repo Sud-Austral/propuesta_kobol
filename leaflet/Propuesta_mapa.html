@@ -91,7 +91,9 @@
                 <li class="op1">MAPA CLARO</li>
                 <li class="op2">MAPA OSCURO</li>
                 <li class="op3">MAPA SATELITAL</li>
-                <li class="op4" onclick="eventoClick()">DESCARGA</li>
+                <li class="op4" onclick="eventoClick()">EXCEL</li>
+                <li class="op5" onclick="eventoClick2()">GEOJSON</li>
+                
             </ul>
         </div>
     </div>
@@ -119,8 +121,8 @@
 
       const dataAExcel = cuerposagua["features"].map(x => x.properties);
       // Función para convertir el diccionario en formato adecuado para XLSX
-      function convertToXLSX() {        
-        var ws = XLSX.utils.json_to_sheet(dataAExcel);
+      function convertToXLSX(dataIn) {        
+        var ws = XLSX.utils.json_to_sheet(dataIn);
         var wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, "Datos");
         return wb;
@@ -132,9 +134,15 @@
       }
 
       function eventoClick(){
-        var wb = convertToXLSX();
+        var wb = convertToXLSX(dataAExcel);
         console.log(wb)
         downloadExcelFile(wb, "datos.xlsx");
+      }
+
+      function eventoClick2(){
+        var jsonString = JSON.stringify(cuerposagua);
+        var blob = new Blob([jsonString], { type: "application/json" });
+        saveAs(blob, "datos.geojson");
       }
 
       
