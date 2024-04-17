@@ -8,6 +8,7 @@ if __name__ == '__main__':
     print("Empezamos")
     form_id = 'aAr9jskmbPu9iJNESsGC6G'  # Reemplaza esto con el ID de tu formulario
     url_api = f"https://kf.kobotoolbox.org/api/v2/assets/{form_id}/data.json"
+    variableGeografica = "GENERALES/shape_extension"
 
     #https://kf.kobotoolbox.org/api/v2/assets/a93vkSiKSw6kbWy5xtuT5e/data.json
 
@@ -25,7 +26,7 @@ if __name__ == '__main__':
             baseProperties = fe.copy()
             baseGeometry["type"] = "MultiPolygon"
             try:                
-                baseGeometry["coordinates"] = [[[[float(x.split(" ")[1]),float(x.split(" ")[0])] for x in fe["shape_extension"].split(";")]]]
+                baseGeometry["coordinates"] = [[[[float(x.split(" ")[1]),float(x.split(" ")[0])] for x in fe[variableGeografica].split(";")]]]
             except:
                 pass
             baseFeature["properties"] = baseProperties.copy()
