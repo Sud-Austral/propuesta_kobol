@@ -1,3 +1,8 @@
+function capitalizarPrimerasLetras(frase) {
+    return frase.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+  }
+
+
 //console.log(producto);
 //const cuerposagua = getData("https://raw.githubusercontent.com/Sud-Austral/DATA_MAPA_PUBLIC_V2/main/AGUAS/CUERPOS/cuerpos_agua_09201.geojson");
 const url = "https://raw.githubusercontent.com/Sud-Austral/DATA_MAPA_PUBLIC_V2/main/AGUAS/CUERPOS/cuerpos_agua_01403.geojson";
@@ -5,13 +10,20 @@ const valoresPermitido = ['GENERALES/administrativa_de_primer_nivel','GENERALES/
 const cuerposagua = getData("https://raw.githubusercontent.com/Sud-Austral/propuesta_kobol/main/mi_diccionario3.geojson");
 
 cuerposagua["features"] = cuerposagua["features"].map( a => {
-    console.log(a)
     const llaves = Object.keys(a["properties"]);
     llaves.forEach(llave => {
         if (!valoresPermitido.includes(llave)) {
           delete a["properties"][llave];
         }
+        else{
+            let newName = llave.replace(/materialidad\//i, '').split("/")[1];
+            newName = capitalizarPrimerasLetras(newName.replaceAll("_"," "));
+            a["properties"][newName] = a["properties"][llave];
+            delete a["properties"][llave];
+        }
     });
+    
+
     return a;
 })
 
