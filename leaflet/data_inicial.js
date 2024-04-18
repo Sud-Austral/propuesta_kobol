@@ -23,7 +23,7 @@ function getLayerMapBox(id){
 }
 //var base2 =L.tileLayer.provider('HEREv3.normalNight', {apiKey: 'SjU6SSxb2QKvye8tQtgvPnCmX-TbmwtTtJol3gz57iI'});
 //var base3 = L.tileLayer.provider('HEREv3.normalDayCustom', {apiKey: 'SjU6SSxb2QKvye8tQtgvPnCmX-TbmwtTtJol3gz57iI'});
-console.log(3,base3)
+//console.log(3,base3)
 //El mapa a utilizar y los valores correspondientes a este.
 /*
 var base = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
