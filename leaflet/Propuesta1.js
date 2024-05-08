@@ -22,8 +22,6 @@ cuerposagua["features"] = cuerposagua["features"].map( a => {
             delete a["properties"][llave];
         }
     });
-    
-
     return a;
 })
 
