@@ -38,8 +38,6 @@ function getStringHTML2(feature, nombreCapa) {
 /*function popup(feature,layer){
    
 }*/
-
-
 //Simplificar el feature tomando solo la variable SUPERFICIE.
 //map aplica la funcion a todos los elementos
 let SUPERFICIE = chile.features.map(x => x.properties.SUPERFICIE);
