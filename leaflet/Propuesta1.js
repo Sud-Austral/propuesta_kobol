@@ -23,8 +23,7 @@ cuerposagua["features"] = cuerposagua["features"].map( a => {
         }
     });
     return a;
-})
-
+});
 //const cuerposagua2 = getData(url);
 //console.log(cuerposagua2)
 //PopUp automatico
